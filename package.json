@@ -1,0 +1,46 @@
+{
+  "name": "remix-sdk",
+  "version": "0.0.1",
+  "description": "LaunchDarkly SDK for Remix",
+  "keywords": [
+    "launchdarkly",
+    "launch",
+    "darkly",
+    "react",
+    "sdk",
+    "remix"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "rimraf lib/* && tsc && mv lib/src/* lib && rimraf lib/package.json lib/src lib/*.test.*",
+    "lint": "eslint --cache --quiet src/**/*.ts*",
+    "prepublishOnly": "npm run build",
+    "prettier": "prettier --write 'src/*.@(js|ts|tsx|json|css)'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/launchdarkly-labs/remix-sdk.git"
+  },
+  "author": "LaunchDarkly",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "17.0.41",
+    "@types/react": "18.0.12",
+    "@types/react-dom": "18.0.5",
+    "eslint": "8.17.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.30.0",
+    "eslint-plugin-simple-import-sort": "7.0.0",
+    "typescript": "4.7.3"
+  },
+  "engines": {
+    "node": ">= 10.17.0 <17",
+    "yarn": ">=3"
+  },
+  "packageManager": "yarn@3.2.1"
+}
