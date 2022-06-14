@@ -20,7 +20,8 @@
     "build": "tsc",
     "lint": "eslint --cache --quiet src/**/*.ts*",
     "prepublishOnly": "npm run build",
-    "prettier": "prettier --write '**/*.@(js|ts|tsx|json|css)'"
+    "prettier": "prettier --write '**/*.@(js|ts|tsx|json|css)'",
+    "link-dev": "./link-dev.sh"
   },
   "repository": {
     "type": "git",
