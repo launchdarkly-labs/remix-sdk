@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+    <title>LaunchDarkly tutorial</title>
+    <!-- Use LaunchDarkly sdk -->
+    <script src="https://unpkg.com/launchdarkly-js-client-sdk@2"></script>
+  </head>
+  <body>
+    <script>
+      // Set up the user properties. This user should appear on your LaunchDarkly users dashboard
+      // soon after you run the demo.
+      var user = {
+        name: 'Bob Loblaw',
+        key: 'example-user-key',
+      };
+
+      var div = document.createElement('div');
+      document.body.appendChild(div);
+
+      div.appendChild(document.createTextNode('Initializing...'));
+
+      // Create a new LDClient instance with your environment-specific SDK key
+      var ldclient = LDClient.initialize('5f7ba41aab53700a0bb7ca5e', user);
+
+      function render() {
+        var flagValue = ldclient.variation('enable.debugger', false);
+        var label = (flagValue ? 'Showing' : 'Not showing') + ' your feature to ' + user.key;
+        console.log("SDK successfully connected! The value of enable.debugger is " + flagValue + " for " + user.key)
+        div.replaceChild(document.createTextNode(label), div.firstChild);
+      }
+
+      ldclient.on('ready', render);
+      ldclient.on('change', render);
+
+      
+    </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <!-- Your HTML here -->
+
+    <!-- 👇️ Script at bottom of body -->
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
