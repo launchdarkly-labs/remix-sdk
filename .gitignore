@@ -105,6 +105,8 @@ dist
 
 .idea
 
+lib
+
 # Using Yarn zero installs
 .yarn/*
 !.yarn/cache
