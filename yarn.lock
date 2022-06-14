@@ -732,6 +732,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "escape-html@npm:~1.0.3":
   version: 1.0.3
   resolution: "escape-html@npm:1.0.3"
@@ -739,6 +740,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 4653767 (Add launchdarky js client sdk package)
 "escape-string-regexp@npm:^1.0.5":
   version: 1.0.5
   resolution: "escape-string-regexp@npm:1.0.5"
@@ -935,6 +938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "etag@npm:~1.8.1":
   version: 1.8.1
   resolution: "etag@npm:1.8.1"
@@ -988,6 +992,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 4653767 (Add launchdarky js client sdk package)
 "fast-deep-equal@npm:^2.0.1":
   version: 2.0.1
   resolution: "fast-deep-equal@npm:2.0.1"
@@ -2033,10 +2039,13 @@ __metadata:
     eslint-plugin-react: 7.30.0
     eslint-plugin-simple-import-sort: 7.0.0
     launchdarkly-js-client-sdk: ^2.22.1
+<<<<<<< HEAD
     prettier: ^2.6.2
     react: ^18.1.0
     react-dom: ^18.1.0
     rimraf: ^3.0.2
+=======
+>>>>>>> 4653767 (Add launchdarky js client sdk package)
     typescript: 4.7.3
   peerDependencies:
     "@remix-run/node": ^1.5.1
@@ -2388,6 +2397,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "util@npm:^0.12.3":
   version: 0.12.4
   resolution: "util@npm:0.12.4"
@@ -2409,6 +2419,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 4653767 (Add launchdarky js client sdk package)
 "uuid@npm:^3.3.2":
   version: 3.4.0
   resolution: "uuid@npm:3.4.0"
