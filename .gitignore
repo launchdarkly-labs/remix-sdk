@@ -107,6 +107,8 @@ dist
 
 lib
 
+.DS_Store
+
 # Using Yarn zero installs
 .yarn/*
 !.yarn/cache
