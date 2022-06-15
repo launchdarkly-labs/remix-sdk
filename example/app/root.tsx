@@ -1,8 +1,7 @@
 import type { MetaFunction, LoaderFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
-import { renderFlagsToString } from 'remix-sdk';
-import { createClient } from './ld.server'
+import { createClient, renderFlagsToString } from './ld.server'
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'New Remix App',

@@ -1,4 +1,4 @@
-import { initLDServerClient } from 'remix-sdk'
+import { initLDServerClient, renderFlagsToString } from 'remix-sdk'
 import { v4 } from 'uuid'
 let client = undefined;
 
@@ -7,6 +7,6 @@ const createClient = async (): Promise<string> => {
     return v4()
 }
 
-export { createClient }
+export { createClient, renderFlagsToString  }
 
 
