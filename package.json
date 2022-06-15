@@ -11,7 +11,7 @@
     "remix"
   ],
   "main": "lib/index.js",
-  "types": "module",
+  "types": "lib/index.d.ts",
   "files": [
     "lib",
     "src"
