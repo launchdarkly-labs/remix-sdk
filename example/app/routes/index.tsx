@@ -1,11 +1,11 @@
 import { useFlags } from 'remix-sdk/client';
 
 export default function Index() {
-  const { devTestFlag } = useFlags();
+  const { thisIsASpecialTest } = useFlags();
 
   return (
     <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
-      <h1>{devTestFlag ? `Welcome to Remix with LD!` : `Welcome to Remix!`}</h1>
+      <h1>{thisIsASpecialTest ? `Welcome to Remix with LD!` : `Welcome to Remix!`}</h1>
       <ul>
         <li>
           <a target="_blank" href="https://remix.run/tutorials/blog" rel="noreferrer">
