@@ -1,17 +1,18 @@
 import { initialize } from 'launchdarkly-js-client-sdk';
 import { init, LDOptions, LDClient, LDUser } from 'launchdarkly-node-server-sdk';
 
-export const initBrowser = (clientSideId: string) => {
-  // const options = {
-  //   bootstrap: document.getElementById('ssr-flags') ?? {},
-  // };
+export const initBrowserSdk = (clientSideId: string) => {
   console.log(`initializing ld client with ${clientSideId}...`);
-  // window.ldClientBrowser = initialize(clientSideId, { anonymous: true }, options);
+
+  const options = {
+    bootstrap: window.ssrFlags,
+  };
+  window.ldClientBrowser = initialize(clientSideId, { anonymous: true }, options);
 };
 
 let client: null | LDClient = null;
 
-export const initLDServerClient = async (clientSideId: string, options: LDOptions = {}) => {
+export const initServerSdk = async (clientSideId: string, options: LDOptions = {}) => {
   client = init(clientSideId, options);
   await client?.waitForInitialization();
   return client;
