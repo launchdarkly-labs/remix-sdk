@@ -37,6 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@remix-run/react", "virtual:4c6579fb1c2f7e37af0289e2f0fcf0911504a15747fa4cde318d74787d34ff531ddb8db37f0720e2f12fe2fd9e7b81beb59648606cb9551247677ce88f13b329#npm:1.5.1"],\
             ["@remix-run/serve", "npm:1.5.1"],\
             ["@remix-run/server-runtime", "virtual:4c6579fb1c2f7e37af0289e2f0fcf0911504a15747fa4cde318d74787d34ff531ddb8db37f0720e2f12fe2fd9e7b81beb59648606cb9551247677ce88f13b329#npm:1.5.1"],\
+            ["@types/lodash.camelcase", "npm:4.3.7"],\
             ["@types/node", "npm:17.0.41"],\
             ["@types/react", "npm:18.0.12"],\
             ["@types/react-dom", "npm:18.0.5"],\
@@ -50,6 +51,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-simple-import-sort", "virtual:4c6579fb1c2f7e37af0289e2f0fcf0911504a15747fa4cde318d74787d34ff531ddb8db37f0720e2f12fe2fd9e7b81beb59648606cb9551247677ce88f13b329#npm:7.0.0"],\
             ["launchdarkly-js-client-sdk", "npm:2.22.1"],\
             ["launchdarkly-node-server-sdk", "npm:6.4.2"],\
+            ["lodash.camelcase", "npm:4.3.0"],\
             ["prettier", "npm:2.6.2"],\
             ["react", "npm:18.1.0"],\
             ["react-dom", "virtual:4c6579fb1c2f7e37af0289e2f0fcf0911504a15747fa4cde318d74787d34ff531ddb8db37f0720e2f12fe2fd9e7b81beb59648606cb9551247677ce88f13b329#npm:18.1.0"],\
@@ -359,6 +361,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-json-schema-npm-7.0.11-79462ae5ca-527bddfe62.zip/node_modules/@types/json-schema/",\
           "packageDependencies": [\
             ["@types/json-schema", "npm:7.0.11"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/lodash", [\
+        ["npm:4.14.182", {\
+          "packageLocation": "./.yarn/cache/@types-lodash-npm-4.14.182-1073aac722-7dd137aa9d.zip/node_modules/@types/lodash/",\
+          "packageDependencies": [\
+            ["@types/lodash", "npm:4.14.182"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/lodash.camelcase", [\
+        ["npm:4.3.7", {\
+          "packageLocation": "./.yarn/cache/@types-lodash.camelcase-npm-4.3.7-24bf01b48e-ef068b921a.zip/node_modules/@types/lodash.camelcase/",\
+          "packageDependencies": [\
+            ["@types/lodash.camelcase", "npm:4.3.7"],\
+            ["@types/lodash", "npm:4.14.182"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2375,6 +2396,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["lodash.camelcase", [\
+        ["npm:4.3.0", {\
+          "packageLocation": "./.yarn/cache/lodash.camelcase-npm-4.3.0-bf268e3bf0-cb9227612f.zip/node_modules/lodash.camelcase/",\
+          "packageDependencies": [\
+            ["lodash.camelcase", "npm:4.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["lodash.merge", [\
         ["npm:4.6.2", {\
           "packageLocation": "./.yarn/cache/lodash.merge-npm-4.6.2-77cb4416bf-ad580b4bdb.zip/node_modules/lodash.merge/",\
@@ -3042,6 +3072,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@remix-run/react", "virtual:4c6579fb1c2f7e37af0289e2f0fcf0911504a15747fa4cde318d74787d34ff531ddb8db37f0720e2f12fe2fd9e7b81beb59648606cb9551247677ce88f13b329#npm:1.5.1"],\
             ["@remix-run/serve", "npm:1.5.1"],\
             ["@remix-run/server-runtime", "virtual:4c6579fb1c2f7e37af0289e2f0fcf0911504a15747fa4cde318d74787d34ff531ddb8db37f0720e2f12fe2fd9e7b81beb59648606cb9551247677ce88f13b329#npm:1.5.1"],\
+            ["@types/lodash.camelcase", "npm:4.3.7"],\
             ["@types/node", "npm:17.0.41"],\
             ["@types/react", "npm:18.0.12"],\
             ["@types/react-dom", "npm:18.0.5"],\
@@ -3055,6 +3086,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-simple-import-sort", "virtual:4c6579fb1c2f7e37af0289e2f0fcf0911504a15747fa4cde318d74787d34ff531ddb8db37f0720e2f12fe2fd9e7b81beb59648606cb9551247677ce88f13b329#npm:7.0.0"],\
             ["launchdarkly-js-client-sdk", "npm:2.22.1"],\
             ["launchdarkly-node-server-sdk", "npm:6.4.2"],\
+            ["lodash.camelcase", "npm:4.3.0"],\
             ["prettier", "npm:2.6.2"],\
             ["react", "npm:18.1.0"],\
             ["react-dom", "virtual:4c6579fb1c2f7e37af0289e2f0fcf0911504a15747fa4cde318d74787d34ff531ddb8db37f0720e2f12fe2fd9e7b81beb59648606cb9551247677ce88f13b329#npm:18.1.0"],\

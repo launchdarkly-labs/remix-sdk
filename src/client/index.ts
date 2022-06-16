@@ -1,10 +1,4 @@
-import { initialize } from 'launchdarkly-js-client-sdk';
+import LDProvider from './provider';
+import useFlags from './useFlags';
 
-export const initBrowserSdk = (clientSideId: string) => {
-  console.log(`initializing ld client with ${clientSideId}...`);
-
-  const options = {
-    bootstrap: window.ssrFlags,
-  };
-  window.ldClientBrowser = initialize(clientSideId, { anonymous: true }, options);
-};
+export { LDProvider, useFlags };

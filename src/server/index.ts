@@ -2,8 +2,8 @@ import { init, LDOptions, LDClient, LDUser } from 'launchdarkly-node-server-sdk'
 
 let client: null | LDClient = null;
 
-export const initServerSdk = async (clientSideId: string, options: LDOptions = {}) => {
-  client = init(clientSideId, options);
+export const initServerSdk = async (sdkKey: string, options: LDOptions = {}) => {
+  client = init(sdkKey, options);
   await client?.waitForInitialization();
   return client;
 };
