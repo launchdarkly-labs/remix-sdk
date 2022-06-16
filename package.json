@@ -10,7 +10,10 @@
     "sdk",
     "remix"
   ],
-  "main": "lib/index.js",
+  "exports": {
+    "./client": "./lib/client/index.js",
+    "./server": "./lib/server/index.js"
+  },
   "types": "lib/index.d.ts",
   "files": [
     "lib",

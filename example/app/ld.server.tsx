@@ -1,4 +1,4 @@
-import { initServerSdk, renderFlagsToString } from 'remix-sdk/lib/server';
+import { initServerSdk, renderFlagsToString } from 'remix-sdk/server';
 import { v4 } from 'uuid';
 let client = undefined;
 
