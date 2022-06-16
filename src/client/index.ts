@@ -1,4 +1,4 @@
 import LDProvider from './provider';
-import useFlags from './useFlags';
+import useFlags from '../shared/useFlags';
 
 export { LDProvider, useFlags };

@@ -1,8 +1,9 @@
 import { init, LDOptions, LDClient, LDUser } from 'launchdarkly-node-server-sdk';
+import ProviderServer from './providerServer';
 
 let client: null | LDClient = null;
 
-export const initServerSdk = async (sdkKey: string, options: LDOptions = {}) => {
+const initServerSdk = async (sdkKey: string, options: LDOptions = {}) => {
   client = init(sdkKey, options);
   await client?.waitForInitialization();
   return client;
@@ -14,7 +15,7 @@ export const initServerSdk = async (sdkKey: string, options: LDOptions = {}) => 
  * @param user
  * @returns
  */
-export const renderFlagsToString = async (user: LDUser) => {
+const renderFlagsToString = async (user: LDUser) => {
   if (!client) {
     console.error(`LD client is not initialized.`);
     return '';
@@ -23,3 +24,5 @@ export const renderFlagsToString = async (user: LDUser) => {
   const flagDataString = JSON.stringify(flagData, null, 2);
   return `window.ssrFlags=${flagDataString};`;
 };
+
+export { ProviderServer, renderFlagsToString, initServerSdk };

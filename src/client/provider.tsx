@@ -1,7 +1,11 @@
 import React, { Component, ReactNode } from 'react';
 import { initialize, LDFlagChangeset, LDFlagSet } from 'launchdarkly-js-client-sdk';
 import { ProviderConfig } from './types';
+<<<<<<< Updated upstream
 import { Provider, LDContext as HocState } from './context';
+=======
+import { Provider, LDContext as HocState } from '../shared/context';
+>>>>>>> Stashed changes
 import { camelCaseKeys, getFlattenedFlagsFromChangeset } from './utils';
 
 type LDProviderProps = ProviderConfig & { children: ReactNode };

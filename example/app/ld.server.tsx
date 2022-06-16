@@ -4,6 +4,7 @@ let client = undefined;
 
 const createClient = async (): Promise<string> => {
   client = await initServerSdk(process.env.LD_SDK_KEY);
+  global.client = client;
   return v4();
 };
 
