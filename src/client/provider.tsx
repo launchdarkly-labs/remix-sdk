@@ -1,38 +1,32 @@
-import React, { Component, PropsWithChildren } from 'react';
-import { initialize, LDOptions } from 'launchdarkly-js-client-sdk';
+import React, { Component, ReactNode } from 'react';
+import { initialize, LDFlagChangeset, LDFlagSet } from 'launchdarkly-js-client-sdk';
 import { ProviderConfig } from './types';
 import { Provider, LDContext as HocState } from './context';
-import { camelCaseKeys } from './utils';
+import { camelCaseKeys, getFlattenedFlagsFromChangeset } from './utils';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-class LDProvider extends Component<PropsWithChildren<ProviderConfig>, HocState> {
+type LDProviderProps = ProviderConfig & { children: ReactNode };
+
+class LDProvider extends Component<LDProviderProps, HocState> {
   readonly state: Readonly<HocState>;
 
-  constructor(props: ProviderConfig) {
+  constructor(props: LDProviderProps) {
     super(props);
     const { clientSideID } = props;
+    const { ssrFlags } = window;
 
     console.log(`initializing ld client with ${clientSideID}...`);
-    let ldClient;
+    const ldClient = initialize(clientSideID, { anonymous: true }, { bootstrap: ssrFlags });
+    ldClient.on('change', (changes: LDFlagChangeset) => {
+      const flattened: LDFlagSet = getFlattenedFlagsFromChangeset(changes, window.ssrFlags);
+      if (Object.keys(flattened).length > 0) {
+        this.setState(({ flags }) => ({ flags: { ...flags, ...flattened } }));
+      }
+    });
 
-    if (typeof window !== 'undefined') {
-      const options = {
-        bootstrap: window.ssrFlags,
-      };
-      ldClient = initialize(clientSideID, { anonymous: true }, options);
-      this.state = {
-        flags: camelCaseKeys(options.bootstrap),
-        ldClient,
-      };
-    } else {
-      console.error(`Fix LDProvider to work on the server`);
-      //TODO: ldClient = this.importInitServerSdk(props.sdkKey, options);
-    }
-  }
-
-  async importInitServerSdk(clientSideID: string, options: LDOptions) {
-    const { initServerSdk } = await import('../server');
-    return initServerSdk(clientSideID, options);
+    this.state = {
+      flags: camelCaseKeys(ssrFlags),
+      ldClient,
+    };
   }
 
   render() {
