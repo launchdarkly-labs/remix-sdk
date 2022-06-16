@@ -13,9 +13,6 @@ class LDProvider extends Component<PropsWithChildren<ProviderConfig>, HocState> 
     const { clientSideID } = props;
 
     console.log(`initializing ld client with ${clientSideID}...`);
-    // const ldClient;
-    
-    // if (typeof window !== 'undefined') {
     const options = {
       bootstrap: window.ssrFlags,
     };
