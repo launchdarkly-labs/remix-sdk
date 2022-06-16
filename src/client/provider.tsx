@@ -31,9 +31,7 @@ class LDProvider extends Component<PropsWithChildren<ProviderConfig>, HocState> 
   subscribeToChanges = () => {
     const { flags: targetFlags } = this.state;
     this.state.ldClient.on('change', (changes: LDFlagChangeset) => {
-      console.log('changes', changes)
       const flattened: LDFlagSet = getFlattenedFlagsFromChangeset(changes, targetFlags);
-      console.log('flattened', flattened)
       if (Object.keys(flattened).length > 0) {
         this.setState(({ flags }) => ({ flags: { ...flags, ...flattened } }));
       }
@@ -41,7 +39,6 @@ class LDProvider extends Component<PropsWithChildren<ProviderConfig>, HocState> 
   }
 
   render() {
-    console.log('this.state', this.state)
     return <Provider value={this.state}>{this.props.children}</Provider>;
   }
 }

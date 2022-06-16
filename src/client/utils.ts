@@ -37,9 +37,10 @@ export const getFlattenedFlagsFromChangeset = (
 ): LDFlagSet => {
   const flattened: LDFlagSet = {};
   for (const key in changes) {
-    if (!targetFlags || targetFlags[key] !== undefined) {
+
+    const flagKey = camelCase(key);
+    if (!targetFlags || targetFlags[flagKey] !== undefined) {
       // tslint:disable-next-line:no-unsafe-any
-      const flagKey = camelCase(key);
       flattened[flagKey] = changes[key].current;
     }
   }
