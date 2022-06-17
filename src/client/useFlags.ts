@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import context from './context';
+import context from '../shared/context';
 
 const useFlags = () => {
   const { flags } = useContext(context);

@@ -42,6 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.12"],\
             ["@types/react-dom", "npm:18.0.5"],\
             ["@types/rimraf", "npm:3.0.2"],\
+            ["@types/uuid", "npm:8.3.4"],\
             ["@typescript-eslint/eslint-plugin", "virtual:4c6579fb1c2f7e37af0289e2f0fcf0911504a15747fa4cde318d74787d34ff531ddb8db37f0720e2f12fe2fd9e7b81beb59648606cb9551247677ce88f13b329#npm:5.28.0"],\
             ["@typescript-eslint/parser", "virtual:4c6579fb1c2f7e37af0289e2f0fcf0911504a15747fa4cde318d74787d34ff531ddb8db37f0720e2f12fe2fd9e7b81beb59648606cb9551247677ce88f13b329#npm:5.28.0"],\
             ["eslint", "npm:8.17.0"],\
@@ -456,6 +457,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-scheduler-npm-0.16.2-ba3a7d8c68-b6b4dcfeae.zip/node_modules/@types/scheduler/",\
           "packageDependencies": [\
             ["@types/scheduler", "npm:0.16.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/uuid", [\
+        ["npm:8.3.4", {\
+          "packageLocation": "./.yarn/cache/@types-uuid-npm-8.3.4-7547f4402c-6f11f3ff70.zip/node_modules/@types/uuid/",\
+          "packageDependencies": [\
+            ["@types/uuid", "npm:8.3.4"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3077,6 +3087,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.12"],\
             ["@types/react-dom", "npm:18.0.5"],\
             ["@types/rimraf", "npm:3.0.2"],\
+            ["@types/uuid", "npm:8.3.4"],\
             ["@typescript-eslint/eslint-plugin", "virtual:4c6579fb1c2f7e37af0289e2f0fcf0911504a15747fa4cde318d74787d34ff531ddb8db37f0720e2f12fe2fd9e7b81beb59648606cb9551247677ce88f13b329#npm:5.28.0"],\
             ["@typescript-eslint/parser", "virtual:4c6579fb1c2f7e37af0289e2f0fcf0911504a15747fa4cde318d74787d34ff531ddb8db37f0720e2f12fe2fd9e7b81beb59648606cb9551247677ce88f13b329#npm:5.28.0"],\
             ["eslint", "npm:8.17.0"],\

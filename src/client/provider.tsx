@@ -1,7 +1,7 @@
 import React, { Component, PropsWithChildren } from 'react';
 import { initialize, LDOptions } from 'launchdarkly-js-client-sdk';
 import { ProviderConfig } from './types';
-import { Provider, LDContext as HocState } from './context';
+import { Provider, LDContext as HocState } from '../shared/context';
 import { camelCaseKeys } from './utils';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -27,6 +27,7 @@ class LDProvider extends Component<PropsWithChildren<ProviderConfig>, HocState> 
     } else {
       console.error(`Fix LDProvider to work on the server`);
       //TODO: ldClient = this.importInitServerSdk(props.sdkKey, options);
+      this.state = {flags: {}, ldClient: undefined};
     }
   }
 

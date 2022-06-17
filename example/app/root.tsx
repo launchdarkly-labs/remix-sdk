@@ -3,7 +3,6 @@ import { useLoaderData } from '@remix-run/react';
 import { json } from '@remix-run/node';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import { createClient, renderFlagsToString } from './ld.server';
-
 export const meta: Partial<MetaFunction> = () => ({
   charset: 'utf-8',
   title: 'New Remix App',
@@ -17,7 +16,7 @@ export const loader: LoaderFunction = async () => {
 
   const serverId = await createClient();
   const ssrFlags = await renderFlagsToString({ key: serverId });
-
+ 
   return { env, ssrFlags };
 };
 
