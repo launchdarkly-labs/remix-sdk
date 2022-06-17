@@ -1,14 +1,6 @@
-import { LDClient, LDFlagChangeset, LDFlagSet } from 'launchdarkly-js-client-sdk';
+import { LDFlagChangeset, LDFlagSet } from 'launchdarkly-js-client-sdk';
 import camelCase from 'lodash.camelcase';
-import { defaultReactOptions, LDReactOptions } from './types';
 
-/**
- * Transforms a set of flags so that their keys are camelCased. This function ignores
- * flag keys which start with `$`.
- *
- * @param rawFlags A mapping of flag keys and their values
- * @return A transformed `LDFlagSet` with camelCased flag keys
- */
 export const camelCaseKeys = (rawFlags: LDFlagSet) => {
   const flags: LDFlagSet = {};
   for (const rawFlag in rawFlags) {
@@ -37,7 +29,6 @@ export const getFlattenedFlagsFromChangeset = (
 ): LDFlagSet => {
   const flattened: LDFlagSet = {};
   for (const key in changes) {
-
     const flagKey = camelCase(key);
     if (!targetFlags || targetFlags[flagKey] !== undefined) {
       // tslint:disable-next-line:no-unsafe-any
@@ -48,38 +39,4 @@ export const getFlattenedFlagsFromChangeset = (
   return flattened;
 };
 
-/**
- * Retrieves flag values.
- *
- * @param ldClient LaunchDarkly client
- * @param reactOptions Initialization options for the LaunchDarkly React SDK
- * @param targetFlags If specified, `launchdarkly-react-client-sdk` will only request and listen to these flags.
- *
- * @returns an `LDFlagSet` with the current flag values from LaunchDarkly filtered by `targetFlags`.
- */
-export const fetchFlags = (
-  ldClient: LDClient,
-  reactOptions: LDReactOptions = defaultReactOptions,
-  targetFlags?: LDFlagSet,
-) => {
-  let rawFlags: LDFlagSet = {};
-
-  if (targetFlags) {
-    for (const flag in targetFlags) {
-      rawFlags[flag] = ldClient.variation(flag, targetFlags[flag]);
-    }
-  } else {
-    rawFlags = ldClient.allFlags();
-  }
-
-  return reactOptions.useCamelCaseFlagKeys ? camelCaseKeys(rawFlags) : rawFlags;
-};
-
-/**
- * @deprecated The `camelCaseKeys.camelCaseKeys` property will be removed in a future version,
- * please update your code to use the `camelCaseKeys` function directly.
- */
-// tslint:disable-next-line deprecation
-camelCaseKeys.camelCaseKeys = camelCaseKeys;
-
-export default { camelCaseKeys, getFlattenedFlagsFromChangeset, fetchFlags };
+export default { camelCaseKeys, getFlattenedFlagsFromChangeset };

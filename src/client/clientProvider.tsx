@@ -1,19 +1,17 @@
 import React, { Component, ReactNode } from 'react';
 import { initialize, LDFlagChangeset, LDFlagSet } from 'launchdarkly-js-client-sdk';
+
+import { LDContext as HocState, Provider } from '../shared/context';
+
 import { ProviderConfig } from './types';
-<<<<<<< Updated upstream
-import { Provider, LDContext as HocState } from './context';
-=======
-import { Provider, LDContext as HocState } from '../shared/context';
->>>>>>> Stashed changes
 import { camelCaseKeys, getFlattenedFlagsFromChangeset } from './utils';
 
-type LDProviderProps = ProviderConfig & { children: ReactNode };
+type LDClientProviderProps = ProviderConfig & { children: ReactNode };
 
-class LDProvider extends Component<LDProviderProps, HocState> {
+class LDClientProvider extends Component<LDClientProviderProps, HocState> {
   readonly state: Readonly<HocState>;
 
-  constructor(props: LDProviderProps) {
+  constructor(props: LDClientProviderProps) {
     super(props);
     const { clientSideID } = props;
     const { ssrFlags } = window;
@@ -38,4 +36,4 @@ class LDProvider extends Component<LDProviderProps, HocState> {
   }
 }
 
-export default LDProvider;
+export default LDClientProvider;

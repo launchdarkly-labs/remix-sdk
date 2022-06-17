@@ -1,18 +1,22 @@
 import type { EntryContext } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
 import { renderToString } from 'react-dom/server';
-import { LDProviderServer } from 'remix-sdk/server';
+// @ts-ignore
+import { LDServerProvider, initLDClient, ldClient } from 'remix-sdk/server';
 
-export default function handleRequest(
+initLDClient(process.env.LD_SDK_KEY);
+
+export default async function handleRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
+  const flags = await ldClient.allFlagsState({ key: 'test', anonymous: true });
   let markup = renderToString(
-    <LDProviderServer>
+    <LDServerProvider flags={flags}>
       <RemixServer context={remixContext} url={request.url} />
-    </LDProviderServer>,
+    </LDServerProvider>,
   );
 
   responseHeaders.set('Content-Type', 'text/html');
