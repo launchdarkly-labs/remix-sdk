@@ -2,7 +2,7 @@ import type { MetaFunction, LoaderFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 // @ts-ignore
-import generateSsrFlags from 'remix-sdk/server';
+import { generateLDWindowValues } from 'remix-sdk/server';
 
 export const meta: Partial<MetaFunction> = () => ({
   charset: 'utf-8',
@@ -11,16 +11,11 @@ export const meta: Partial<MetaFunction> = () => ({
 });
 
 export const loader: LoaderFunction = async () => {
-  const env = {
-    LD_CLIENT_SIDE_ID: process.env.LD_CLIENT_SIDE_ID,
-  };
-  const ssrFlags = await generateSsrFlags();
-  return { env, ssrFlags };
+  return await generateLDWindowValues(process.env.LD_CLIENT_SIDE_ID);
 };
 
 export default function App() {
-  const { env, ssrFlags } = useLoaderData();
-  const windowEnv = `window.env=${JSON.stringify(env)};`;
+  const ldWindowValues = useLoaderData();
   return (
     <html lang="en">
       <head>
@@ -28,7 +23,7 @@ export default function App() {
         <Links />
         <script
           dangerouslySetInnerHTML={{
-            __html: `${ssrFlags}${windowEnv}`,
+            __html: `${ldWindowValues}`,
           }}
         ></script>
       </head>

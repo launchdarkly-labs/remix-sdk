@@ -1,5 +1,5 @@
-import generateSsrFlags from './generateSsrFlags';
+import generateLDWindowValues from './generateLDWindowValues';
 import { initLDClient, ldClient } from './initLDClient';
 import ProviderServer from './serverProvider';
 
-export { generateSsrFlags, initLDClient, ldClient, ProviderServer };
+export { generateLDWindowValues, initLDClient, ldClient, ProviderServer };
