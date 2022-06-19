@@ -1,5 +1,4 @@
-import generateLDWindowValues from './generateLDWindowValues';
-import { initLDClient, ldClient } from './initLDClient';
-import ProviderServer from './serverProvider';
+import createProvider, { ldClient } from './createProvider';
+import LDScript from './ldScript';
 
-export { generateLDWindowValues, initLDClient, ldClient, ProviderServer };
+export { createProvider, ldClient, LDScript };

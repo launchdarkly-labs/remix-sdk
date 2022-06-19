@@ -1,5 +1,5 @@
 import useFlags from '../shared/useFlags';
 
-import LDClientProvider from './clientProvider';
+import LDBrowser from './ldBrowser';
 
-export { LDClientProvider, useFlags };
+export { LDBrowser, useFlags };

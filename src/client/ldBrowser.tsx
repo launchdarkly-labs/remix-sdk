@@ -6,12 +6,12 @@ import { LDContext as HocState, Provider } from '../shared/context';
 import { ProviderConfig } from './types';
 import { camelCaseKeys, getFlattenedFlagsFromChangeset } from './utils';
 
-type LDClientProviderProps = ProviderConfig & { children: ReactNode };
+type LDBrowserProps = ProviderConfig & { children: ReactNode };
 
-class LDClientProvider extends Component<LDClientProviderProps, HocState> {
+class LDBrowser extends Component<LDBrowserProps, HocState> {
   readonly state: Readonly<HocState>;
 
-  constructor(props: LDClientProviderProps) {
+  constructor(props: LDBrowserProps) {
     super(props);
     const { clientSideID } = props;
     const { ssrFlags } = window;
@@ -36,4 +36,4 @@ class LDClientProvider extends Component<LDClientProviderProps, HocState> {
   }
 }
 
-export default LDClientProvider;
+export default LDBrowser;
