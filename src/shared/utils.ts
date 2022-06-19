@@ -1,4 +1,4 @@
-import { LDFlagChangeset, LDFlagSet } from 'launchdarkly-js-client-sdk';
+import type { LDFlagChangeset, LDFlagSet } from 'launchdarkly-js-client-sdk';
 import camelCase from 'lodash.camelcase';
 
 export const camelCaseKeys = (rawFlags: LDFlagSet) => {
@@ -29,7 +29,7 @@ export const getFlattenedFlagsFromChangeset = (
 ): LDFlagSet => {
   const flattened: LDFlagSet = {};
   for (const key in changes) {
-    const flagKey = camelCase(key);
+    const flagKey = key;
     if (!targetFlags || targetFlags[flagKey] !== undefined) {
       // tslint:disable-next-line:no-unsafe-any
       flattened[flagKey] = changes[key].current;

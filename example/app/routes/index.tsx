@@ -2,7 +2,7 @@
 import { useFlags } from 'remix-sdk/client';
 
 export default function Index() {
-  const { devTestFlag } = useFlags();
+  const { 'dev-test-flag': devTestFlag } = useFlags();
 
   return (
     <div style={devTestFlag ? { background: '#282828' } : { fontFamily: 'system-ui, sans-serif', lineHeight: '2.4' }}>
