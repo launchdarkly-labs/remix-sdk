@@ -13,8 +13,9 @@ const createProvider = async (sdkKey: string, user: LDUser) => {
   }
 
   console.log('Initialized ld node client...');
-  const flags = await ldClient.allFlagsState(user);
-  // console.log(`flags: ${JSON.stringify(flags)}`);
+  let flags = await ldClient.allFlagsState(user);
+  flags = flags.allValues();
+  // console.log(`flags: ${JSON.stringify(flags.allValues())}`);
   const LDProvider = ({ children }: { children: ReactNode }) => {
     return (
       <Provider

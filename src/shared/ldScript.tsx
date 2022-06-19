@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useFlags from '../shared/useFlags';
+import useFlags from './useFlags';
 
 type LDScriptProps = { clientSideID: string };
 

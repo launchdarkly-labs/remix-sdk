@@ -1,7 +1,7 @@
-import type { MetaFunction } from '@remix-run/node';
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
+import type { LoaderFunction, MetaFunction } from '@remix-run/node';
+import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react';
 // @ts-ignore
-import { LDScript } from 'remix-sdk/server';
+import { LDScript } from 'remix-sdk/shared';
 
 export const meta: Partial<MetaFunction> = () => ({
   charset: 'utf-8',
@@ -9,13 +9,18 @@ export const meta: Partial<MetaFunction> = () => ({
   viewport: 'width=device-width,initial-scale=1',
 });
 
+export const loader: LoaderFunction = async () => {
+  return process.env.LD_CLIENT_SIDE_ID;
+};
+
 export default function App() {
+  const clientSideID = useLoaderData();
   return (
     <html lang="en">
       <head>
         <Meta />
         <Links />
-        <LDScript clientSideID={process.env.LD_CLIENT_SIDE_ID} />
+        <LDScript clientSideID={clientSideID} />
       </head>
       <body>
         <Outlet />
