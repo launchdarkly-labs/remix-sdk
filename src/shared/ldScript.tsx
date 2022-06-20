@@ -6,7 +6,7 @@ type LDScriptProps = { clientSideID: string };
 
 const LDScript = ({ clientSideID }: LDScriptProps) => {
   const flags = JSON.stringify(useFlags(), null, 2);
-  const windowVars = `window.LD_CLIENT_SIDE_ID='${clientSideID}';window.ssrFlags=${flags}`;
+  const windowVars = `window.clientSideID='${clientSideID}';window.ssrFlags=${flags}`;
   return (
     <script
       dangerouslySetInnerHTML={{

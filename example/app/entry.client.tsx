@@ -4,7 +4,7 @@ import { hydrate } from 'react-dom';
 import { LDBrowser } from 'remix-sdk/client';
 
 hydrate(
-  <LDBrowser clientSideID={window.LD_CLIENT_SIDE_ID}>
+  <LDBrowser>
     <RemixBrowser />
   </LDBrowser>,
   document,

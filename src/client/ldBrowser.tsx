@@ -4,17 +4,14 @@ import { initialize, LDFlagChangeset, LDFlagSet } from 'launchdarkly-js-client-s
 import { LDContext as HocState, Provider } from '../shared/context';
 import { getFlattenedFlagsFromChangeset } from '../shared/utils';
 
-import { ProviderConfig } from './types';
-
-type LDBrowserProps = ProviderConfig & { children: ReactNode };
+type LDBrowserProps = { children: ReactNode };
 
 class LDBrowser extends Component<LDBrowserProps, HocState> {
   readonly state: Readonly<HocState>;
 
   constructor(props: LDBrowserProps) {
     super(props);
-    const { clientSideID } = props;
-    const { ssrFlags } = window;
+    const { ssrFlags, clientSideID } = window;
 
     console.log(`initializing ld client with ${clientSideID}...`);
     const ldClient = initialize(clientSideID, { anonymous: true }, { bootstrap: ssrFlags });
