@@ -4,6 +4,7 @@ import { init, LDUser } from 'launchdarkly-node-server-sdk';
 
 import { Provider } from '../shared/context';
 
+// TODO: fix this
 export let ldClient: any;
 
 const createProvider = async (sdkKey: string, user: LDUser) => {
