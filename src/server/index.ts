@@ -1,25 +1,3 @@
-import { init, LDOptions, LDClient, LDUser } from 'launchdarkly-node-server-sdk';
+import createProvider, { ldClient } from './createProvider';
 
-let client: null | LDClient = null;
-
-export const initServerSdk = async (sdkKey: string, options: LDOptions = {}) => {
-  client = init(sdkKey, options);
-  await client?.waitForInitialization();
-  return client;
-};
-
-/**
- * This will be used to bootstrap the client side flags when
- * rendering from the server.
- * @param user
- * @returns
- */
-export const renderFlagsToString = async (user: LDUser) => {
-  if (!client) {
-    console.error(`LD client is not initialized.`);
-    return '';
-  }
-  const flagData = (await client?.allFlagsState(user))?.toJSON();
-  const flagDataString = JSON.stringify(flagData, null, 2);
-  return `window.ssrFlags=${flagDataString};`;
-};
+export { createProvider, ldClient };

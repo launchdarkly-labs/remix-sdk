@@ -20,6 +20,22 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          // Npm packages. `react` related packages come first.
+          ['^react', '^@?\\w'], // Internal packages
+          [
+            '^(actions|actionTypes|components|context|epics|hooks|middleware|reducers|routers|sources|stories|stylesheets|types|utils)(/.*|$)',
+          ], // Side effect imports
+          ['^\\u0000'], // Parent imports. Put `..` last.
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'], // Other relative imports. Put same-folder imports and `.` last.
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'], // Style imports.
+          ['^.+\\.s?css$'],
+        ],
+      },
+    ],
     // avoid false positives for vars used only in types, and replace with ts version where possible
     'no-unused-vars': ['off'],
     'no-undef': ['off'],
@@ -60,7 +76,6 @@ module.exports = {
     ],
     '@typescript-eslint/prefer-for-of': 'error',
     '@typescript-eslint/unified-signatures': 'error',
-    '@typescript-eslint/no-for-in-array': 'error',
     '@typescript-eslint/no-require-imports': 'error',
     '@typescript-eslint/prefer-function-type': 'error',
     '@typescript-eslint/no-parameter-properties': 'error',

@@ -12,7 +12,8 @@
   ],
   "exports": {
     "./client": "./lib/client/index.js",
-    "./server": "./lib/server/index.js"
+    "./server": "./lib/server/index.js",
+    "./shared": "./lib/shared/index.js"
   },
   "types": "lib/index.d.ts",
   "files": [

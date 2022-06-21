@@ -1,8 +1,7 @@
-import type { MetaFunction, LoaderFunction } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
-import { json } from '@remix-run/node';
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
-import { createClient, renderFlagsToString } from './ld.server';
+import type { LoaderFunction, MetaFunction } from '@remix-run/node';
+import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react';
+// @ts-ignore
+import { LDScript } from 'remix-sdk/shared';
 
 export const meta: Partial<MetaFunction> = () => ({
   charset: 'utf-8',
@@ -11,29 +10,17 @@ export const meta: Partial<MetaFunction> = () => ({
 });
 
 export const loader: LoaderFunction = async () => {
-  const env = {
-    LD_CLIENT_SIDE_ID: process.env.LD_CLIENT_SIDE_ID,
-  };
-
-  const serverId = await createClient();
-  const ssrFlags = await renderFlagsToString({ key: serverId });
-
-  return { env, ssrFlags };
+  return process.env.LD_CLIENT_SIDE_ID;
 };
 
 export default function App() {
-  const { env, ssrFlags } = useLoaderData();
-  const windowEnv = `window.env=${JSON.stringify(env)};`;
+  const clientSideID = useLoaderData();
   return (
     <html lang="en">
       <head>
         <Meta />
         <Links />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `${ssrFlags}${windowEnv}`,
-          }}
-        ></script>
+        <LDScript clientSideID={clientSideID} />
       </head>
       <body>
         <Outlet />

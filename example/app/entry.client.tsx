@@ -1,10 +1,11 @@
 import { RemixBrowser } from '@remix-run/react';
 import { hydrate } from 'react-dom';
-import { LDProvider } from 'remix-sdk/client';
+// @ts-ignore
+import { LDBrowser } from 'remix-sdk/client';
 
 hydrate(
-  <LDProvider clientSideID={window.env.LD_CLIENT_SIDE_ID}>
+  <LDBrowser>
     <RemixBrowser />
-  </LDProvider>,
+  </LDBrowser>,
   document,
 );
