@@ -79,10 +79,17 @@ First, install [modd](https://github.com/cortesi/modd):
 brew install modd
 ```
 
-Then:
+Then, add an `example/.env` file with your launchdarkly keys:
+
+```
+LD_SDK_KEY=sdk-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+LD_CLIENT_SIDE_ID=xxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+Lastly, run the `modd` command to execute the `modd.conf` script:
 
 ```shell
 modd
 ```
 
-Then refresh your browser.
+Open `http://localhost:3000` to see your Remix app
