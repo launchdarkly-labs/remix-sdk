@@ -11,10 +11,14 @@ class LDBrowser extends Component<LDBrowserProps, HocState> {
 
   constructor(props: LDBrowserProps) {
     super(props);
-    const { ssrFlags, clientSideID } = window;
+    const { ssrFlags, clientSideID, ldUserKey } = window;
 
     console.log(`initializing ld client with ${clientSideID}...`);
-    const ldClient = initialize(clientSideID, { anonymous: true }, { bootstrap: ssrFlags });
+    const ldClient = initialize(
+      clientSideID, 
+      { key: ldUserKey ?? undefined, anonymous: !ldUserKey ? true : undefined }, 
+      { bootstrap: ssrFlags }
+    );
 
     ldClient.on('change', (changes: LDFlagChangeset) => {
       const flattened: LDFlagSet = getFlattenedFlagsFromChangeset(changes, ssrFlags);
