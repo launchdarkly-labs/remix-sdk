@@ -7,7 +7,7 @@ interface LDContext {
   key: string;
 }
 
-const context = createContext<LDContext>({ flags: {}, ldClient: undefined, key });
+const context = createContext<LDContext>({ flags: {}, ldClient: undefined, key: '' });
 const { Provider, Consumer } = context;
 
 export { Provider, Consumer, LDContext };
