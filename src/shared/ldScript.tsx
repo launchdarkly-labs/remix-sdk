@@ -8,7 +8,7 @@ type LDScriptProps = { clientSideID: string };
 const LDScript = ({ clientSideID }: LDScriptProps) => {
   const flags = JSON.stringify(useFlags(), null, 2);
   const key = useUserKey();
-  const windowVars = `window.clientSideID='${clientSideID}';window.ssrFlags=${flags};window.ldUserKey=${key}`;
+  const windowVars = `window.clientSideID='${clientSideID}';window.ssrFlags=${flags};window.ldUserKey='${key}';`;
   return (
     <script
       dangerouslySetInnerHTML={{
