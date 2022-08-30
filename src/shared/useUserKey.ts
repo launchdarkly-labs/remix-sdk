@@ -3,8 +3,8 @@ import { useContext } from 'react';
 import context from './context';
 
 const useUserKey = () => {
-  const { key } = useContext(context);
-  return key;
+  const { user } = useContext(context);
+  return user?.key;
 };
 
 export default useUserKey;

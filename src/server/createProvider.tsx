@@ -22,7 +22,7 @@ const createProvider = async (sdkKey: string, user: LDUser) => {
         value={{
           flags,
           ldClient,
-          key: user.key,
+          user,
         }}
       >
         {children}
