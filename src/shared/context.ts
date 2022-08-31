@@ -4,7 +4,7 @@ import type { LDClient as LDJSClient, LDUser, LDFlagSet } from 'launchdarkly-js-
 interface LDContext {
   flags: LDFlagSet;
   ldClient?: LDJSClient;
-  user: LDUser;
+  user?: LDUser;
 }
 
 const context = createContext<LDContext>({ flags: {}, ldClient: undefined, user: undefined });

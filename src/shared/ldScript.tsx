@@ -1,14 +1,14 @@
 import React from 'react';
 
 import useFlags from './useFlags';
-import useUserKey from './useUserKey';
+import useLDUser from './useLDUser';
 
 type LDScriptProps = { clientSideID: string };
 
 const LDScript = ({ clientSideID }: LDScriptProps) => {
   const flags = JSON.stringify(useFlags(), null, 2);
-  const key = useUserKey();
-  const windowVars = `window.clientSideID='${clientSideID}';window.ssrFlags=${flags};window.ldUserKey='${key}';`;
+  const user = JSON.stringify(useLDUser(), null, 2);
+  const windowVars = `window.clientSideID='${clientSideID}';window.ssrFlags=${flags};window.ldUser=${user};`;
   return (
     <script
       dangerouslySetInnerHTML={{

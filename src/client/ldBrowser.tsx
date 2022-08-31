@@ -11,14 +11,10 @@ class LDBrowser extends Component<LDBrowserProps, HocState> {
 
   constructor(props: LDBrowserProps) {
     super(props);
-    const { ssrFlags, clientSideID, ldUserKey } = window;
+    const { ssrFlags, clientSideID, ldUser } = window;
 
     console.log(`initializing ld client with ${clientSideID}...`);
-    const ldClient = initialize(
-      clientSideID, 
-      { key: ldUserKey ?? undefined, anonymous: !ldUserKey ? true : undefined }, 
-      { bootstrap: ssrFlags }
-    );
+    const ldClient = initialize(clientSideID, ldUser, { bootstrap: ssrFlags });
 
     ldClient.on('change', (changes: LDFlagChangeset) => {
       const flattened: LDFlagSet = getFlattenedFlagsFromChangeset(changes, ssrFlags);
@@ -30,6 +26,7 @@ class LDBrowser extends Component<LDBrowserProps, HocState> {
     this.state = {
       flags: ssrFlags,
       ldClient,
+      user: ldUser,
     };
   }
 
