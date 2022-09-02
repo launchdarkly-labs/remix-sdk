@@ -1,11 +1,10 @@
-import React, { Component, ReactNode } from 'react';
+import { Component, ReactNode } from 'react';
 import { initialize, LDFlagChangeset, LDFlagSet } from 'launchdarkly-js-client-sdk';
 
 import { LDContext as HocState, Provider } from '../shared/context';
 import { getFlattenedFlagsFromChangeset } from '../shared/utils';
 
 type LDBrowserProps = { children: ReactNode };
-
 class LDBrowser extends Component<LDBrowserProps, HocState> {
   readonly state: Readonly<HocState>;
 
@@ -31,6 +30,7 @@ class LDBrowser extends Component<LDBrowserProps, HocState> {
   }
 
   render() {
+    // eslint-disable-next-line react/react-in-jsx-scope
     return <Provider value={this.state}>{this.props.children}</Provider>;
   }
 }
