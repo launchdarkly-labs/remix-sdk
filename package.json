@@ -1,6 +1,6 @@
 {
   "name": "remix-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "LaunchDarkly SDK for Remix",
   "keywords": [
     "launchdarkly",
@@ -10,12 +10,6 @@
     "sdk",
     "remix"
   ],
-  "exports": {
-    "./client": "./lib/client/index.js",
-    "./server": "./lib/server/index.js",
-    "./shared": "./lib/shared/index.js"
-  },
-  "types": "lib/index.d.ts",
   "files": [
     "lib",
     "src"
