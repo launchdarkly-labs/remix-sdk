@@ -1,6 +1,6 @@
 {
-  "name": "remix-sdk",
-  "version": "0.0.1",
+  "name": "launchdarkly-remix-sdk",
+  "version": "1.0.0-alpha.1",
   "description": "LaunchDarkly SDK for Remix",
   "keywords": [
     "launchdarkly",
@@ -17,8 +17,7 @@
   },
   "types": "lib/index.d.ts",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "build": "tsc",
