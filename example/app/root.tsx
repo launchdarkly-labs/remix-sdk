@@ -1,7 +1,7 @@
 import type { LoaderFunction, MetaFunction } from '@remix-run/node';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react';
 // @ts-ignore
-import { LDScript } from 'remix-sdk/shared';
+import { LDScript } from 'launchdarkly-remix-sdk/shared';
 
 export const meta: Partial<MetaFunction> = () => ({
   charset: 'utf-8',
