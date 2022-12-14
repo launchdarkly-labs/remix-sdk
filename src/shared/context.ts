@@ -10,5 +10,6 @@ interface LDContext {
 const context = createContext<LDContext>({ flags: {}, ldClient: undefined, user: undefined });
 const { Provider, Consumer } = context;
 
-export { Provider, Consumer, LDContext };
+export { Provider, Consumer };
+export type { LDContext };
 export default context;
