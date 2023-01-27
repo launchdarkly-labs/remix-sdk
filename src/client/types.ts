@@ -1,4 +1,4 @@
-import { LDClient, LDFlagSet, LDOptions, LDUser } from 'launchdarkly-js-client-sdk';
+import { LDClient, LDFlagSet, LDOptions, LDSingleKindContext} from 'launchdarkly-js-client-sdk';
 
 export interface ProviderConfig {
   /**
@@ -14,7 +14,7 @@ export interface ProviderConfig {
    *
    * @see https://docs.launchdarkly.com/sdk/features/user-config#javascript
    */
-  user?: LDUser;
+  user?: LDSingleKindContext;
 
   /**
    * If set to true, the ldClient will not be initialized until the user prop has been defined.

@@ -945,13 +945,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"escape-string-regexp@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "escape-string-regexp@npm:1.0.5"
-  checksum: 6092fda75c63b110c706b6a9bfde8a612ad595b628f0bd2147eea1d3406723020810e591effc7db1da91d80a71a737a313567c5abb3813e8d9c71f4aa595b410
-  languageName: node
-  linkType: hard
-
 "escape-string-regexp@npm:^4.0.0":
   version: 4.0.0
   resolution: "escape-string-regexp@npm:4.0.0"
@@ -1821,30 +1814,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"launchdarkly-js-client-sdk@npm:^2.22.1":
-  version: 2.22.1
-  resolution: "launchdarkly-js-client-sdk@npm:2.22.1"
+"launchdarkly-js-client-sdk@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "launchdarkly-js-client-sdk@npm:3.1.0"
   dependencies:
-    escape-string-regexp: ^1.0.5
-    launchdarkly-js-sdk-common: 3.6.0
-  checksum: fbec5cdb7ca73d353260a2a67ebfa960805ea233eba018645ec29d107219f7f117fccb84ded881736b635ddd74cad8c0acbd9ee70682f1250031a3d48c8e6bbc
+    escape-string-regexp: ^4.0.0
+    launchdarkly-js-sdk-common: 5.0.1
+  checksum: e7c879d9d433a7dceb59e1c24c3a3a2954bfa7917a306011188c74023242dfa3eafa38be5c2171771bf0e10d20b3d511ab9aa0a8800e7efb90333c55d94e2c77
   languageName: node
   linkType: hard
 
-"launchdarkly-js-sdk-common@npm:3.6.0":
-  version: 3.6.0
-  resolution: "launchdarkly-js-sdk-common@npm:3.6.0"
+"launchdarkly-js-sdk-common@npm:5.0.1":
+  version: 5.0.1
+  resolution: "launchdarkly-js-sdk-common@npm:5.0.1"
   dependencies:
     base64-js: ^1.3.0
     fast-deep-equal: ^2.0.1
-    uuid: ^3.3.2
-  checksum: 3694aac635ffc6e8f6c9292950795accbcd0283a9a6ea1a4f79bdc05c74725befaf648db1ca52c43c6fee94dcbce1af3c2dbdbf09666d34c380762920481c505
+    uuid: ^8.0.0
+  checksum: f62410b41c9d605157943de380a8e00dad2648bf4292eec3e775e3f62feb76c531a5849444de190e5132a035a4b9ec0dc769bd26fce849ff191006b0fec36bfc
   languageName: node
   linkType: hard
 
-"launchdarkly-node-server-sdk@npm:^6.4.2":
-  version: 6.4.2
-  resolution: "launchdarkly-node-server-sdk@npm:6.4.2"
+"launchdarkly-node-server-sdk@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "launchdarkly-node-server-sdk@npm:7.0.0"
   dependencies:
     async: ^3.1.0
     launchdarkly-eventsource: 1.4.4
@@ -1853,7 +1846,7 @@ __metadata:
     semver: ^7.3.0
     tunnel: 0.0.6
     uuid: ^8.3.2
-  checksum: 181237239a3371984082e20c1a04b3f363bfc17d231418e17dc4e2de6c81ed517bf7e61f6ad4755fb5205fa4353a2141f85eaa67bf03a42860e4c63c9637351f
+  checksum: 422469a7654443a69f1cbbf78deaf59a3946a19184e84f3b5b3fa42f9070d5c4d078e1717de53c5451199a41c4fbdd0751e1b7d25c2621b16884836d42eabcde
   languageName: node
   linkType: hard
 
@@ -2404,8 +2397,8 @@ __metadata:
     eslint-plugin-prettier: 4.0.0
     eslint-plugin-react: 7.30.0
     eslint-plugin-simple-import-sort: 7.0.0
-    launchdarkly-js-client-sdk: ^2.22.1
-    launchdarkly-node-server-sdk: ^6.4.2
+    launchdarkly-js-client-sdk: ^3.1.0
+    launchdarkly-node-server-sdk: ^7.0.0
     lodash.camelcase: ^4.3.0
     prettier: ^2.6.2
     react: ^18.1.0
@@ -2851,16 +2844,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^3.3.2":
-  version: 3.4.0
-  resolution: "uuid@npm:3.4.0"
-  bin:
-    uuid: ./bin/uuid
-  checksum: 58de2feed61c59060b40f8203c0e4ed7fd6f99d42534a499f1741218a1dd0c129f4aa1de797bcf822c8ea5da7e4137aa3673431a96dae729047f7aca7b27866f
-  languageName: node
-  linkType: hard
-
-"uuid@npm:^8.3.2":
+"uuid@npm:^8.0.0, uuid@npm:^8.3.2":
   version: 8.3.2
   resolution: "uuid@npm:8.3.2"
   bin:
