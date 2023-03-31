@@ -1,5 +1,5 @@
 // @ts-ignore
-import { useFlags } from 'remix-sdk/client';
+import { useFlags } from 'launchdarkly-remix-sdk/client';
 
 export default function Index() {
   const { 'dev-test-flag': devTestFlag } = useFlags();

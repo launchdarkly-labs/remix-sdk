@@ -2,7 +2,7 @@ import type { EntryContext } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
 import { renderToString } from 'react-dom/server';
 // @ts-ignore
-import { createProvider } from 'remix-sdk/server';
+import { createProvider } from 'launchdarkly-remix-sdk/server';
 
 export default async function handleRequest(
   request: Request,

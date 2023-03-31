@@ -1,5 +1,7 @@
 # LaunchDarkly Remix SDK
 
+> This project is not officially supported by LaunchDarkly.
+
 # Quickstart
 
 1. In `entry.server.tsx`:

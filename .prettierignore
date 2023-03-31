@@ -1,0 +1,10 @@
+.cache
+.fig
+.yarn
+.vscode
+lib
+package.json
+package-lock.json
+public
+dist
+build

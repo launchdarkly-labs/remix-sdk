@@ -1,6 +1,6 @@
 {
-  "name": "remix-sdk",
-  "version": "0.0.2",
+  "name": "launchdarkly-remix-sdk",
+  "version": "1.0.0-alpha.3",
   "description": "LaunchDarkly SDK for Remix",
   "keywords": [
     "launchdarkly",
@@ -11,13 +11,11 @@
     "remix"
   ],
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "build": "tsc",
     "lint": "eslint --cache --quiet src/**/*.ts*",
-    "prepublishOnly": "npm run build",
     "prettier": "prettier --write '**/*.@(js|ts|tsx|json|css)'",
     "link-dev": "./link-dev.sh"
   },
